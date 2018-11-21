@@ -1,0 +1,24 @@
+<div [ngStyle] = "{
+	'border': '2px solid ' + config.rojo,
+	'padding': '10px',
+	'background': config.fondo
+}">
+	<h1>{{titulo}}</h1>
+	<p>
+	  Mostrando el componente del alumno
+	</p>
+	<button (click)="cambiarTitulo()">Cambiar Titulo</button>
+
+	<span>{{config.fondo}}</span>
+	<ul>
+		<li *ngFor="let insti of misInstituciones">
+			{{insti.nombre}} - <strong>{{insti.ruc}}</strong>
+			<span *ngIf="insti.anio >=2000" 
+				[style.background]="'yellow'"> {{insti.anio}}</span>
+			<span *ngIf="insti.anio < 2000"> {{insti.anio}}</span>
+		</li>
+	</ul>
+
+	<carrera></carrera>
+</div>
+
